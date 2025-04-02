@@ -1,7 +1,7 @@
 import openpyxl
 from openpyxl import Workbook, load_workbook
 
-oldWB = load_workbook('/Users/mspul/Desktop/IS303/Poorly_Organized_Data_1.xlsx')
+oldWB = load_workbook('/Users/mspul/Documents/GitHub/IS303excel/Poorly_Organized_Data_2.xlsx')
 newWB = Workbook()
 newWB.remove(newWB["Sheet"])
 
