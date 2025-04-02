@@ -31,6 +31,19 @@ for sheetName in newWB.sheetnames:
     newWB[sheetName]['C1'] = "Student ID"
     newWB[sheetName]['D1'] = "Grade"
 
-newWB.save('Organized_Data.xlsx')
+    newWB[sheetName]['F2'] = "Highest Grade"
+    newWB[sheetName]['F3'] = "Lowest Grade"
+    newWB[sheetName]['F4'] = "Mean Grade"
+    newWB[sheetName]['F5'] = "Median Grade"
+    newWB[sheetName]['F6'] = "Number of Students"
+
+    iLastRow = newWB[sheetName].max_row
+    newWB[sheetName]["G2"] = f"=MAX(D2:D{iLastRow})"
+    newWB[sheetName]["G3"] = f"=MIN(D2:D{iLastRow})"
+    newWB[sheetName]["G4"] = f"=AVERAGE(D2:D{iLastRow})"
+    newWB[sheetName]["G5"] = f"=MEDIAN(D2:D{iLastRow})"
+    newWB[sheetName]["G6"] = f"=COUNT(D2:D{iLastRow})"
+
+newWB.save('formatted_grades.xlsx')
 newWB.close()
 oldWB.close()
